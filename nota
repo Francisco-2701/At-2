@@ -1,0 +1,25 @@
+# Função para ler uma nota válida
+def ler_nota(mensagem):
+    while True:
+        try:
+            nota = float(input(mensagem))
+            if 0 <= nota <= 10:
+                return nota
+            else:
+                print("A nota deve estar entre 0 e 10. Tente novamente.")
+        except ValueError:
+            print("Entrada inválida. Digite um número.")
+
+# Leitura das duas notas
+nota1 = ler_nota("Digite a primeira nota: ")
+nota2 = ler_nota("Digite a segunda nota: ")
+
+# Cálculo da média
+media = (nota1 + nota2) / 2
+
+# Exibição do resultado
+print(f"Média: {media:.2f}")
+if media >= 6:
+    print("Aluno aprovado!")
+else:
+    print("Aluno reprovado!")
